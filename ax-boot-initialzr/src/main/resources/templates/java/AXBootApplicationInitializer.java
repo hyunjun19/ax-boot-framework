@@ -1,4 +1,4 @@
-package com.chequer.axboot.admin;
+package ${basePackage};
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;

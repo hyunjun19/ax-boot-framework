@@ -1,10 +1,10 @@
-package com.chequer.axboot.admin.domain.user;
+package ${basePackage}.domain.user;
 
-import com.chequer.axboot.admin.domain.BaseService;
-import com.chequer.axboot.admin.domain.user.auth.UserAuth;
-import com.chequer.axboot.admin.domain.user.auth.UserAuthService;
-import com.chequer.axboot.admin.domain.user.role.UserRole;
-import com.chequer.axboot.admin.domain.user.role.UserRoleService;
+import ${basePackage}.domain.BaseService;
+import ${basePackage}.domain.user.auth.UserAuth;
+import ${basePackage}.domain.user.auth.UserAuthService;
+import ${basePackage}.domain.user.role.UserRole;
+import ${basePackage}.domain.user.role.UserRoleService;
 import com.chequer.axboot.core.parameter.RequestParams;
 import com.querydsl.core.BooleanBuilder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

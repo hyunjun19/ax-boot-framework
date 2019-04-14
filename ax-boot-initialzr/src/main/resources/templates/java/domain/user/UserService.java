@@ -1,10 +1,10 @@
-package ${basePackage}.domain.user;
+package com.chequer.axboot.admin.domain.user;
 
-import ${basePackage}.domain.BaseService;
-import ${basePackage}.domain.user.auth.UserAuth;
-import ${basePackage}.domain.user.auth.UserAuthService;
-import ${basePackage}.domain.user.role.UserRole;
-import ${basePackage}.domain.user.role.UserRoleService;
+import com.chequer.axboot.admin.domain.BaseService;
+import com.chequer.axboot.admin.domain.user.auth.UserAuth;
+import com.chequer.axboot.admin.domain.user.auth.UserAuthService;
+import com.chequer.axboot.admin.domain.user.role.UserRole;
+import com.chequer.axboot.admin.domain.user.role.UserRoleService;
 import com.chequer.axboot.core.parameter.RequestParams;
 import com.querydsl.core.BooleanBuilder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -45,7 +45,7 @@ public class UserService extends BaseService<User, String> {
                 delete(qUserAuth).where(qUserAuth.userCd.eq(user.getUserCd())).execute();
 
                 String password = bCryptPasswordEncoder.encode(user.getUserPs());
-                User originalUser = userRepository.findOne(user.getUserCd());
+                User originalUser = userRepository.findById(user.getUserCd()).orElse(null);
 
                 if (originalUser != null) {
                     if (isNotEmpty(user.getUserPs())) {
